@@ -1,7 +1,7 @@
 import Register from './register'
 
 // controller modules
-import home from './home'
+import user from './module/user'
 
 // main route object
 const route = {
@@ -10,7 +10,7 @@ const route = {
         ctx.body = "Hi, this is index"
     },
     children: [
-        home
+      user
     ]
 }
 
