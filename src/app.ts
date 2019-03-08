@@ -1,6 +1,6 @@
 import Koa from 'koa';
 import ControllerRegister from './controller'
-import ServerConfig from './config/server'
+import Config from './config'
 import database from './database'
 
 
@@ -14,6 +14,6 @@ ControllerRegister(app)
 
 
 
-app.listen(ServerConfig.port);
+app.listen(Config.port);
 
-console.log(`Server running on port ${ServerConfig.port}`);
+console.log(`Server running on port ${Config.port}`);

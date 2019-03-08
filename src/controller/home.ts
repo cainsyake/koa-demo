@@ -23,7 +23,8 @@ const home = {
       path: "a1",
       method: "get",
       controller: async (ctx: any) => {
-        ctx.body = "Hi, this is a1"
+        const UserModel = mongoose.model("User")
+        ctx.body = await UserModel.find().exec()
       }
     }
   ]
