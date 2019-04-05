@@ -1,6 +1,7 @@
 import mongoose from "mongoose"
 
 import UserService from "../../service/base/user"
+import CqService from '../../service/base/cq'
 
 const saveInfo = async () => {
   const UserModel = mongoose.model("User")
@@ -29,6 +30,15 @@ const user = {
       method: "get",
       controller: async (ctx: any) => {
         ctx.body = await UserService.findAll()
+      }
+    },
+    {
+      path: 'cq',
+      method: 'get',
+      controller: async (ctx: any) => {
+        const query = ctx.request.query
+
+        ctx.body = await CqService.query(query.model)
       }
     }
   ]

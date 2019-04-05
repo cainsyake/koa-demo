@@ -2,10 +2,13 @@ import mongoose from 'mongoose'
 import ServerConfig from '../config/server'
 
 import UserSchema from './schema/user'
+import UserExtraSchema from './schema/userExtra'
 
 const database = () => {
   // require('./schema/user')
   mongoose.model('User', UserSchema)
+  mongoose.model('UserExtra', UserExtraSchema)
+
 
   mongoose.set('debug', true)
 
